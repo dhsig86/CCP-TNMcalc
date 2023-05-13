@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"CodeGPT.maxTokens": 2000,
+		"CodeGPT.query.language": "Portuguese",
+		"CodeGPT.temperature": 0.7,
+		"CodeGPT.model": "gpt-3.5-turbo"
+	}
+}

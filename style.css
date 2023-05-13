@@ -1,0 +1,93 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif; /* Roboto é a fonte padrão usada no Material Design */
+  color: #212529;
+}
+
+.header, .footer {
+  text-align: center;  
+  padding: 20px;
+  background-color: #012B40; /* Azul-marinho */
+  color: #ffffff;  
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+nav li img {
+  width: 60px;
+  height: 70px;
+}
+
+nav ul li {
+  margin-bottom: 20px;
+}
+
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#splash-screen img {
+  max-width: 100%; /* Isso fará a imagem se adaptar ao tamanho da tela */
+}
+
+
+.container {
+  max-width: 600px;  
+  margin: 0 auto;  
+  padding: 20px;
+}
+
+button {
+  background-color: #012B40; /* Azul-marinho */
+  color: #ffffff;  
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px; /* Bordas arredondadas */
+  width: 100%; /* Faz o botão preencher toda a largura disponível */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+button:hover {
+  background-color: #4CAF50; 
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra maior no hover para indicar elevação */
+}
+
+select.form-control, .tumores-comuns {
+  margin-bottom: 20px;
+  border-radius: 5px; /* Bordas arredondadas */
+  border: none; /* Remove a borda padrão */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+select {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: 'Roboto', sans-serif;
+  color: #212529;
+}
+.output {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}

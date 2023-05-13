@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadiamento Clínica TNM - Laringe</title>
+  <!-- CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <header class="p-3 bg-dark text-white">
+    <h1>Estadiamento TNM - Laringe</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h2>Laringe</h2>
+  </nav>
+
+  <main class="container my-4">
+        
+    <form>
+      <div class="form-group">
+        <label for="sublocalizacao">Selecione a Sublocalização:</label>
+        <select id="sublocalizacao" name="sublocalizacao" class="form-control">
+          <option value="">Selecione a sublocalização</option>
+          <option value="glote">Glote</option>
+          <option value="supraglote">Supraglote</option>
+          <option value="subglote">Subglote</option>
+        </select>
+      </div>
+
+    <label for="t">T:</label>
+    <select id="t" name="t" class="form-control">
+      <option value="">Selecione a opção</option>
+    </select>
+
+    <label for="n">N:</label>
+    <select id="n" name="n" class="form-control">
+      <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
+      <option value="n0">N0 - Sem metástase em linfonodo regional</option>
+      <option value="n1">N1 - Metástase em linfonodo único ipsilateral, menor que 3 cm em maior dimensão</option>
+      <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão
+      </option>
+      <option value="n2b">N2b - Múltiplos linfonodos ipsilaterais, nenhum maior que 6cm</option>
+      <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em
+        maior dimensão</option>
+      <option value="n3">N3 - Metástase em linfonodo maior que 6 cm em maior dimensão</option>
+    </select>
+
+    <label for="m">M:</label>
+    <select id="m" name="m" class="form-control">
+      <option value="m0">M0 - Sem metástases à distância</option>
+      <option value="m1">M1 - Metástases à distância presentes</option>
+    </select>
+
+    <button type="button" id="calcular-estagio-laringe" class="btn btn-primary btn-lg">Calcular estágio</button>
+     
+  </form>
+    <br> <br>
+
+    <div id="estagio-tumor" class="mt-4"></div>
+    <div id="resumo-opcoes" class="mt-4"></div>
+    <div id="comentario-prognostico" class="mt-4"></div>
+    <div id="tumores-comuns" class="mt-4"></div>
+  </main>
+
+  <footer class="p-3 bg-dark text-white text-center">
+    <a class="text-light" href="index.html">Retornar ao Menu Inicial</a>
+  </footer>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  <script src="laringescript.js" defer></script>
+</body>
+
+</html>
