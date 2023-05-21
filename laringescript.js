@@ -9,16 +9,6 @@ const prognosticoPorEstagio = {
   },
 };
 
-const tumoresComuns = {
-  laringe: [
-    "Carcinoma de células escamosas",
-    "Carcinoma verrucoso",
-    "Carcinoma adenoide cístico",
-    "Carcinoma mucoepidermoide",
-    "Carcinoma indiferenciado",
-  ],
-};
-
 document.addEventListener('DOMContentLoaded', function () {
   
   const calcularEstagioButton = document.getElementById('calcular-estagio-laringe');
@@ -28,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nValue = document.getElementById('n').value;
     const mValue = document.getElementById('m').value;
 
+    
     const estagioTumor = calcularEstagioLaringe(tValue, nValue, mValue);
     exibirEstagioTumor(estagioTumor);
 
@@ -46,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (sublocalizacao === 'glote') {
       const opcoesT = [
+        { value: 'tx', text: 'Tx - O tumor primário não pode ser avaliado.' },
         { value: 't1a', text: 'T1a - Tumor limitado a uma corda vocal, com mobilidade normal' },
         { value: 't1b', text: 'T1b - Tumor invade ambas as cordas vocais, com mobilidade normal' },
         { value: 't2', text: 'T2 - Tumor invade a laringe extrínseca ou diminui a mobilidade da(s) corda(s) vocal(is)' },
@@ -62,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } else if (sublocalizacao === 'supraglote') {
       const opcoesT = [
+        { value: 'tx', text: 'Tx - O tumor primário não pode ser avaliado.' },
         { value: 't1', text: 'T1 - Tumor limitado à supraglote unifocal com normalidade das cordas vocais' },
         { value: 't2', text: 'T2 - Tumor invade a mucosa de mais de um subsítio supraglótico ou região glótica, ou uma área supraglótica menor ou igual a 1 cm em maior dimensão, sem fixação das cordas vocais' },
         { value: 't3', text: 'T3 - Tumor limitado à laringe com fixação da(s) corda(s) vocal(is) ou tumor com extensão até a região pré-epiglótica ou paraglote, ou ambos, sem fixação das cordas vocais' },
@@ -77,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } else if (sublocalizacao === 'subglote') {
       const opcoesT = [
+        { value: 'tx', text: 'Tx - O tumor primário não pode ser avaliado.' },
         { value: 't1', text: 'T1 - Tumor limitado à subglote' },
         { value: 't2', text: 'T2 - Tumor invade a laringe extrínseca' },
         { value: 't3', text: 'T3 - Tumor limitado à laringe com fixação da(s) corda(s) vocal(is)' },
@@ -95,6 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
   
   function calcularEstagioLaringe(t, n, m) {
     let estagio = "";
+
+    // Adicionando condição para Tx, Nx ou Mx
+    if (t === "tx" || n === "nx" || m === "mx") {
+    return "Estágio não pode ser definido";
+    }
 
     if (m === "m1") {
       estagio = "Estágio IVC";
@@ -155,7 +154,7 @@ function gerarResumoOpcoes() {
   // Capitalize the first letter of the sublocation.
   const sublocalizacaoCapitalizada = sublocalizacao.charAt(0).toUpperCase() + sublocalizacao.slice(1);
 
-  const resumo = `cT${tValue}cN${nValue}cM${mValue} de ${sublocalizacaoCapitalizada}`;
+  const resumo = ` T${tValue} N${nValue} M${mValue} clínico de ${sublocalizacaoCapitalizada}`;
   // Supondo que você tenha uma div com o id 'resumo-opcoes' onde você deseja exibir o resumo
   document.getElementById('resumo-opcoes').innerText = resumo;
 }
@@ -170,4 +169,23 @@ function exibirComentarioPrognostico(comentarioPrognostico) {
     // Exibe o comentário do prognóstico em algum lugar do seu HTML.
     document.getElementById('comentario-prognostico').textContent = comentarioPrognostico;
 }
+
+document.getElementById("calcular-estagio-laringe").addEventListener("click", function() {
+  const tumoresComuns = [
+    { nome: "1 - Carcinoma de células escamosas", percentual:"Aproximadamente 90%" },
+    { nome: "2 - Carcinoma verrucoso", percentual: "Aproximadamente 3-5%" },
+    { nome: "3 - Carcinoma adenoide cístico", percentual: "Aproximadamente 2-3%" },
+    { nome: "4 - Carcinoma mucoepidermoide", percentual: "Aproximadamente 1-2%" },
+    { nome: "5 - Carcinoma indiferenciado", percentual: "Aproximadamente <1%" },
+  ];
+  
+  let divTumoresComuns = document.getElementById("tumores-comuns");
+  divTumoresComuns.innerHTML = "";
+
+  for(let tumor of tumoresComuns) {
+    divTumoresComuns.innerHTML += `<p>${tumor.nome} - ${tumor.percentual}</p>`;
+  }
+});
+
+
 

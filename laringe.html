@@ -15,15 +15,18 @@
     <h1>Estadiamento TNM - Laringe</h1>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <h2>Laringe</h2>
-  </nav>
-
+  <div class="navbar navbar-dark bg-dark d-flex justify-content-start">
+    <a href="laringe.html" class="btn btn-outline-light me-2 rounded-pill">Laringe</a>
+    <a href="faringe.html" class="btn btn-outline-light me-2 rounded-pill">Faringe</a>
+    <!-- Adicione mais botões conforme necessário -->
+  </div>
+  
+  
   <main class="container my-4">
         
     <form>
       <div class="form-group">
-        <label for="sublocalizacao">Selecione a Sublocalização:</label>
+        <label for="sublocalizacao">Sublocalização:</label>
         <select id="sublocalizacao" name="sublocalizacao" class="form-control">
           <option value="">Selecione a sublocalização</option>
           <option value="glote">Glote</option>
@@ -37,21 +40,24 @@
       <option value="">Selecione a opção</option>
     </select>
 
+    <br> </br>
     <label for="n">N:</label>
     <select id="n" name="n" class="form-control">
+      <option value="">Selecione a opção</option>
       <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
       <option value="n0">N0 - Sem metástase em linfonodo regional</option>
       <option value="n1">N1 - Metástase em linfonodo único ipsilateral, menor que 3 cm em maior dimensão</option>
-      <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão
-      </option>
+      <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão</option>
       <option value="n2b">N2b - Múltiplos linfonodos ipsilaterais, nenhum maior que 6cm</option>
-      <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em
-        maior dimensão</option>
+      <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em maior dimensão</option>
       <option value="n3">N3 - Metástase em linfonodo maior que 6 cm em maior dimensão</option>
     </select>
 
+    <br> </br>
     <label for="m">M:</label>
     <select id="m" name="m" class="form-control">
+      <option value="">Selecione a opção</option>
+      <option value="m0">Mx - Sem avaliação de metástases à distância</option>
       <option value="m0">M0 - Sem metástases à distância</option>
       <option value="m1">M1 - Metástases à distância presentes</option>
     </select>

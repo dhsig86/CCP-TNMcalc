@@ -15,65 +15,92 @@
     <h1>Estadiamento TNM - Faringe</h1>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <h2>Laringe</h2> <h2>Faringe</h2>
-  </nav>
+  <div class="navbar navbar-dark bg-dark d-flex justify-content-start">
+    <a href="laringe.html" class="btn btn-outline-light me-2 rounded-pill">Laringe</a>
+    <a href="faringe.html" class="btn btn-outline-light me-2 rounded-pill">Faringe</a>
+    <!-- Adicione mais botões conforme necessário -->
+  </div>
+  
 
   <main class="container my-4">
         
     <form>
       <div class="form-group">
-        <label for="sublocalizacao">Selecione a Sublocalização:</label>
+        <label for="sublocalizacao">Sublocalização:</label>
         <select id="sublocalizacao" name="sublocalizacao" class="form-control">
-          <option value="">Selecione a sublocalização</option>
-          <option value="glote">Glote</option>
-          <option value="supraglote">Supraglote</option>
-          <option value="subglote">Subglote</option>
+          <option value="">Selecione a opção</option>
+          <option value="nasofaringe">Nasofaringe</option>
+          <option value="orofaringe">Orofaringe</option>
+          <option value="hipofaringe">Hipofaringe</option>
         </select>
       </div>
 
-    <label for="t">T:</label>
-    <select id="t" name="t" class="form-control">
-      <option value="">Selecione a opção</option>
-    </select>
+      <label for="t">T:</label>
+      <select id="t" name="t" class="form-control">
+        <option value="">Selecione a opção</option>
+      </select>
+  
+      <br> </br>
+      <label for="n">N:</label>
+      <select id="n" name="n" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
+        <option value="n0">N0 - Sem metástase em linfonodo regional</option>
+        <option value="n1">N1 - Metástase em linfonodo único ipsilateral, menor que 3 cm em maior dimensão</option>
+        <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão</option>
+        <option value="n2b">N2b - Múltiplos linfonodos ipsilaterais, nenhum maior que 6cm</option>
+        <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em maior dimensão</option>
+        <option value="n3">N3 - Metástase em linfonodo maior que 6 cm em maior dimensão</option>
+      </select>
+  
+      <br> </br>
+      <label for="m">M:</label>
+      <select id="m" name="m" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="m0">Mx - Sem avaliação de metástases à distância</option>
+        <option value="m0">M0 - Sem metástases à distância</option>
+        <option value="m1">M1 - Metástases à distância presentes</option>
+      </select>
 
-    <label for="n">N:</label>
-    <select id="n" name="n" class="form-control">
-      <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
-      <option value="n0">N0 - Sem metástase em linfonodo regional</option>
-      <option value="n1">N1 - Metástase em linfonodo único ipsilateral, menor que 3 cm em maior dimensão</option>
-      <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão
-      </option>
-      <option value="n2b">N2b - Múltiplos linfonodos ipsilaterais, nenhum maior que 6cm</option>
-      <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em
-        maior dimensão</option>
-      <option value="n3">N3 - Metástase em linfonodo maior que 6 cm em maior dimensão</option>
-    </select>
+      <br></br>
+      <label for="hpv">Teste HPV(p16):</label>
+        <select id="hpv" name="hpv">
+        <option value="">Selecione uma opção</option>
+        <option value="positivo">Positivo</option>
+        <option value="negativo">Negativo</option>
+        </select>
+        <br></br>
 
-    <label for="m">M:</label>
-    <select id="m" name="m" class="form-control">
-      <option value="m0">M0 - Sem metástases à distância</option>
-      <option value="m1">M1 - Metástases à distância presentes</option>
-    </select>
+  
 
-    <button type="button" id="calcular-estagio-laringe" class="btn btn-primary btn-lg">Calcular estágio</button>
+    <button type="button" id="calcular-estagio-faringe" class="btn btn-primary btn-lg">Calcular estágio</button>
      
   </form>
     <br> <br>
 
     <div id="estagio-tumor" class="mt-4"></div>
+    <br> <br>
     <div id="resumo-opcoes" class="mt-4"></div>
+    <br> </br>
     <div id="comentario-prognostico" class="mt-4"></div>
+    <br> </br>
+    <div id="taxa-sobrevida" class="mt-4">    </div> <!-- Nova div para taxa de sobrevida -->
+    <br> </br>
     <div id="tumores-comuns" class="mt-4"></div>
-  </main>
+    <br> </br> 
+    <div id="div-citacao"></div>
+
+</main>
 
   <footer class="p-3 bg-dark text-white text-center">
-    <a class="text-light" href="index.html">Retornar ao Menu Inicial</a>
+    <p id="fonte"></p>
+
+    <a class="text-light" href="index.html">Voltar ao Menu Inicial</a>
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
-  <script src="laringescript.js" defer></script>
+  <script src="faringescript.js" defer></script>
 </body>
 
 </html>

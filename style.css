@@ -45,7 +45,7 @@ nav ul li {
 }
 
 button {
-  background-color: #012B40; /* Azul-marinho */
+  background-color: #04496c; /* Azul-marinho */
   color: #ffffff;  
   border: none;
   padding: 10px 20px;
@@ -83,11 +83,19 @@ select {
   font-family: 'Roboto', sans-serif;
   color: #212529;
 }
-.output {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 20px;
+
+.estagio-tumor, .comentario-prognostico, .resumo-opcoes {
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
 }
+
+#t, #n, #m {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
