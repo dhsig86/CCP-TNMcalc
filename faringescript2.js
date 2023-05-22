@@ -2,55 +2,55 @@ const prognosticoPorEstagio = {
   orofaringe: {
       "Estágio I": {
           comentario: "Corresponde aproximadamente ao estágio 'Localizado' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 62%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 62%"
       },
       "Estágio II": {
           comentario: "Corresponde aproximadamente ao estágio 'Regional' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 57%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 57%"
       },
       "Estágio III": {
           comentario: "Corresponde aproximadamente ao estágio 'Regional' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 57%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 57%"
       },
       "Estágio IV": {
           comentario: "Corresponde aproximadamente ao estágio 'Distante' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 29%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 29%"
       }
   },
   hipofaringe: {
       "Estágio I": {
           comentario: "Corresponde aproximadamente ao estágio 'Localizado' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 52%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 52%"
       },
       "Estágio II": {
           comentario: "Corresponde aproximadamente ao estágio 'Regional' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 34%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 34%"
       },
       "Estágio III": {
           comentario: "Corresponde aproximadamente ao estágio 'Regional' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 34%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 34%"
       },
       "Estágio IV": {
           comentario: "Corresponde aproximadamente ao estágio 'Distante' na classificação SEER.",
-          taxaSobrevida: "Sobrevida aproximada de 23%"
+          taxaSobrevida: "Sobrevida em 5 anos aproximada é de 23%"
       }
   },
   nasofaringe: {
     "Estágio I": {
         comentario: "Corresponde aproximadamente ao estágio 'Localizado' na classificação SEER.",
-        taxaSobrevida: "Sobrevida aproximada de 81%"
+        taxaSobrevida: "Sobrevida em 5 anos aproximada é de 81%"
     },
     "Estágio II": {
         comentario: "Corresponde aproximadamente ao estágio 'Regional' na classificação SEER.",
-        taxaSobrevida: "Sobrevida aproximada de 73%"
+        taxaSobrevida: "Sobrevida em 5 anos aproximada é de 73%"
     },
     "Estágio III": {
         comentario: "Corresponde aproximadamente ao estágio 'Regional' na classificação SEER.",
-        taxaSobrevida: "Sobrevida aproximada de 73%"
+        taxaSobrevida: "Sobrevida em 5 anos aproximada é de 73%"
     },
     "Estágio IV": {
         comentario: "Corresponde aproximadamente ao estágio 'Distante' na classificação SEER.",
-        taxaSobrevida: "Sobrevida aproximada de 48%"
+        taxaSobrevida: "Sobrevida em 5 anos aproximada é de 48%"
     }
   }
 };
@@ -127,8 +127,8 @@ const tumores = {
           { value: 'tis', text: 'Tis - Carcinoma in situ.' },
           { value: 't1', text: 'T1 - O tumor é de 2 cm ou menos no maior diâmetro.' },
           { value: 't2', text: 'T2 - O tumor é maior que 2 cm, mas não maior que 4 cm no maior diâmetro.' },
-          { value: 't3', text: 'T3 - O tumor é maior que 4 cm no maior diâmetro.' },
-          { value: 't4', text: 'T4 - O tumor invade os tecidos adjacentes.' }
+          { value: 't3', text: 'T3 - Tumor maior que 4 cm na maior dimensão ou extensão para a superfície lingual da epiglote' },
+          { value: 't4', text: 'T4 - O tumor invade os tecidos adjacentes. Doença local moderadamente avançada. O tumor invade a laringe, músculo extrínseco da língua, pterigoide medial, palato duro ou mandíbula ou além' }
         ];
 
         opcoesT.forEach(function (opcao) {
@@ -180,14 +180,18 @@ const tumores = {
                 estagio = 'Estágio II';
             } else if ((['t1', 't2'].includes(t) && ['n0', 'n1'].includes(n) && m === 'm0')) {
                 estagio = 'Estágio I';
+            } else if ((['t4'].includes(t) && ['n3'].includes(n) && m === 'm0')) {
+                estagio = 'Estágio IVB'
             } else if (m === 'm1') {
-                estagio = 'Estágio IVA';
+                estagio = 'Estágio IVC';
             }
         } else {
             if ((t === 't4a' || ['n2', 'n3'].includes(n)) && m === 'm0') {
                 estagio = 'Estágio IVA';
             } else if ((['t1', 't2', 't3'].includes(t) && ['n0', 'n1', 'n2'].includes(n) && m === 'm0')) {
                 estagio = 'Estágio III';
+            } else if ((['t1', 't2'].includes() && ['n1'].includes(n) && m === 'm0')) {
+                estagio = 'Estágio II';
             } else if (m === 'm1') {
                 estagio = 'Estágio IVC';
             }
