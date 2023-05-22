@@ -128,7 +128,8 @@ const tumores = {
           { value: 't1', text: 'T1 - O tumor é de 2 cm ou menos no maior diâmetro.' },
           { value: 't2', text: 'T2 - O tumor é maior que 2 cm, mas não maior que 4 cm no maior diâmetro.' },
           { value: 't3', text: 'T3 - Tumor maior que 4 cm na maior dimensão ou extensão para a superfície lingual da epiglote' },
-          { value: 't4', text: 'T4 - O tumor invade os tecidos adjacentes. Doença local moderadamente avançada. O tumor invade a laringe, músculo extrínseco da língua, pterigoide medial, palato duro ou mandíbula ou além' }
+          { value: 't4a', text: 'T4a - O tumor invade a laringe, músculo extrínseco da língua, pterigoide medial, palato duro ou mandíbula ou além.' },
+          { value: 't4b', text: 'T4b - Doença local muito avançada.O tumor invade o músculo pterigoideo lateral, as placas pterigoides, a nasofaringe lateral ou a base do crânio ou envolve a artéria carótida.' }
         ];
 
         opcoesT.forEach(function (opcao) {
@@ -164,7 +165,7 @@ const tumores = {
         if (n.startsWith('n2')) {
             n = 'n2';
         }
-    
+                
         if (t === "tx" || n === "nx" || m === "mx") {
             return "Estágio não pode ser definido";
         }
@@ -174,24 +175,27 @@ const tumores = {
         }
     
         if (hpv === 'positivo') {
-            if ((['t3', 't4'].includes(t) && ['n0', 'n1', 'n2'].includes(n) && m === 'm0')) {
+            
+            if ((['t1','t2','t3'].includes(t) && ['n3a', 'n3b'].includes(n) && m === 'm0')) {
                 estagio = 'Estágio III';
-            } else if ((['t1', 't2'].includes(t) && ['n2'].includes(n) && m === 'm0')) {
+            } else if ((['t1', 't2', 't3'].includes(t) && ['n2'].includes(n) && m === 'm0')) {
                 estagio = 'Estágio II';
             } else if ((['t1', 't2'].includes(t) && ['n0', 'n1'].includes(n) && m === 'm0')) {
-                estagio = 'Estágio I';
-            } else if ((['t4'].includes(t) && ['n3'].includes(n) && m === 'm0')) {
-                estagio = 'Estágio IVB'
+                estagio = 'Estágio I';            
+            } else if ((['t4a', 't4b'].includes(t) && ['n0', 'n1','n2', 'n3a', 'n3b'].includes(n) && m === 'm0')) {
+                estagio = 'Estágio III';  
             } else if (m === 'm1') {
                 estagio = 'Estágio IVC';
             }
         } else {
-            if ((t === 't4a' || ['n2', 'n3'].includes(n)) && m === 'm0') {
+            if ((t === 't4a' || ['n2'].includes(n)) && m === 'm0') {
                 estagio = 'Estágio IVA';
             } else if ((['t1', 't2', 't3'].includes(t) && ['n0', 'n1', 'n2'].includes(n) && m === 'm0')) {
                 estagio = 'Estágio III';
-            } else if ((['t1', 't2'].includes() && ['n1'].includes(n) && m === 'm0')) {
+            } else if ((['t1', 't2'].includes(t) && ['n1'].includes(n) && m === 'm0')) {
                 estagio = 'Estágio II';
+            } else if ((['t4b'].includes(t) && ['n3a', 'n3b'].includes(n) && m === 'm0')) {
+                estagio = 'Estágio IVB';
             } else if (m === 'm1') {
                 estagio = 'Estágio IVC';
             }
