@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadiamento Clínica TNM - Glândulas Salivares</title>
+  <!-- CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <header class="p-3 bg-dark text-white">
+    <h1>Estadiamento TNM - Glândulas Salivares</h1>
+  </header>
+
+  <div class="navbar navbar-dark bg-dark d-flex justify-content-center">
+    <div class="btn-group-vertical">
+        <a href="laringe.html" class="btn btn-outline-light my-2 rounded-pill">Laringe</a>
+        <a href="faringe.html" class="btn btn-outline-light my-2 rounded-pill">Faringe</a>
+        <a href="cavidadeoral.html" class="btn btn-outline-light my-2 rounded-pill">Cavidade Oral</a>
+        <!-- Adicione mais botões conforme necessário -->
+    </div>
+</div>
+<br></br>
+
+  <main class="container my-4">
+
+    <form>
+      <div class="form-group">
+        <label for="sublocalizacao">Sublocalização:</label>
+        <select id="sublocalizacao" name="sublocalizacao" class="form-control">
+          <option value="">Selecione a opção</option>
+          <option value="parotida">Parótida</option>
+          <option value="submandibular">Submandibular</option>
+          <option value="sublingual">Sublingual</option>
+          <option value="salivaresmenores">Glândulas Salivares Menores</option>
+        </select>
+      </div>
+
+      <label for="t">T:</label>
+      <select id="t" name="t" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="tx">Tx - O tumor primário não pode ser avaliado.</option>
+        <option value="tis">Tis - Carcinoma in situ</option>
+        <option value="t1">T1 - Tumor 2 cm ou menos em maior dimensão</option>
+        <option value="t2">T2 - Tumor mais de 2 cm, mas não mais de 4 cm em maior dimensão</option>
+        <option value="t3">T3 - Tumor mais de 4 cm em maior dimensão</option>
+        <option value="t4a">T4a (moderadamente avançado): Tumor que invade a pele, a mandíbula, o ouvido externo ou o nervo facial.</option>
+        <option value="t4b">T4b (muito avançado): Tumor que invade a base do crânio, o nervo facial encarcerado, o nervo hipoglosso, o nervo vago ou a artéria carótida interna.</option>
+      </select>
+  
+      <br> </br>
+      <label for="n">N:</label>
+      <select id="n" name="n" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
+        <option value="n0">N0 - Sem metástase em linfonodo regional</option>
+        <option value="n1">N1 - Metástase em linfonodo único ipsilateral, menor que 3 cm em maior dimensão</option>
+        <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão</option>
+        <option value="n2b">N2b - Múltiplos linfonodos ipsilaterais, nenhum maior que 6cm</option>
+        <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em maior dimensão</option>
+        <option value="n3a">N3a - Metástase em linfonodo maior que 6 cm na maior dimensão e acometimento extra nodal negativo;</option>
+        <option value="n3b">N3b - Metástase em linfonodo maior que 6 cm na maior dimensão e acometimento extra nodal positivo;</option>
+      </select>
+  
+      <br> </br>
+      <label for="m">M:</label>
+      <select id="m" name="m" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="m0">Mx - Sem avaliação de metástases à distância</option>
+        <option value="m0">M0 - Sem metástases à distância</option>
+        <option value="m1">M1 - Metástases à distância presentes</option>
+      </select>
+      
+    <button type="button" id="calcular-estagio-glandulas-salivares" class="btn btn-primary btn-lg">Calcular estágio</button>
+     
+  </form>
+    <br> <br>
+
+    <div id="estagio-tumor" class="mt-4"></div>
+    <br> <br>
+    <div id="resumo-opcoes" class="mt-4"></div>
+    <br> </br>
+    <div id="comentario-prognostico" class="mt-4"></div>
+    <br> </br>
+    <div id="taxa-sobrevida" class="mt-4"></div>
+    <br> </br>
+    <div id="tumores-comuns" class="mt-4"></div>
+    <br> </br>
+    <div id="fonte"></div>
+
+</main>
+
+<footer>
+
+    <a class="btn text-light" href="index.html">Retornar ao Menu Inicial</a>
+    <a class="btn text-light" href="glandulassalivares.html">Retornar ao Topo</a>
+    <a class = "btn text-light" button id="copy-btn"> Copiar resultado </button></a>
+
+
+  </footer>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  <script src="glandulassalivares.js" defer></script>
+</body>
+
+</html>
