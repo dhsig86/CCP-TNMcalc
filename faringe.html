@@ -15,12 +15,14 @@
     <h1>Estadiamento TNM - Faringe</h1>
   </header>
 
-  <div class="navbar navbar-dark bg-dark d-flex justify-content-start">
-    <a href="laringe.html" class="btn btn-outline-light me-2 rounded-pill">Laringe</a>
-    <a href="faringe.html" class="btn btn-outline-light me-2 rounded-pill">Faringe</a>
-    <!-- Adicione mais botões conforme necessário -->
-  </div>
-  
+  <div class="navbar navbar-dark bg-dark d-flex justify-content-center">
+    <div class="btn-group-vertical">
+        <a href="laringe.html" class="btn btn-outline-light my-2 rounded-pill">Laringe</a>
+        <a href="cavidadeoral.html" class="btn btn-outline-light me-2 rounded-pill">Cavidade Oral</a>
+        <!-- Adicione mais botões conforme necessário -->
+    </div>
+</div>
+<br></br>  
 
   <main class="container my-4">
         
@@ -50,7 +52,8 @@
         <option value="n2a">N2a - Metástase em linfonodo único ipsilateral, entre 3 cm e 6 cm em maior dimensão</option>
         <option value="n2b">N2b - Múltiplos linfonodos ipsilaterais, nenhum maior que 6cm</option>
         <option value="n2c">N2c - Metástase em linfonodos bilaterais ou contralaterais, nenhum maior que 6 cm em maior dimensão</option>
-        <option value="n3">N3 - Metástase em linfonodo maior que 6 cm em maior dimensão</option>
+        <option value="n3a">N3a - Metástase em linfonodo maior que 6 cm na maior dimensão e acometimento extra nodal negativo;</option>
+        <option value="n3b">N3b - Metástase em linfonodo maior que 6 cm na maior dimensão e acometimento extra nodal positivo;</option>
       </select>
   
       <br> </br>
@@ -63,7 +66,7 @@
       </select>
 
       <br></br>
-      <label for="hpv">Teste HPV(p16):</label>
+      <label for="hpv">HPV(p16+):</label>
         <select id="hpv" name="hpv">
         <option value="">Selecione uma opção</option>
         <option value="positivo">Positivo</option>
@@ -83,19 +86,22 @@
     <div id="resumo-opcoes" class="mt-4"></div>
     <br> </br>
     <div id="comentario-prognostico" class="mt-4"></div>
+    
     <br> </br>
     <div id="taxa-sobrevida" class="mt-4">    </div> <!-- Nova div para taxa de sobrevida -->
     <br> </br>
     <div id="tumores-comuns" class="mt-4"></div>
     <br> </br> 
-    <div id="div-citacao"></div>
+    <div id="div-citacao"> 
+    </div>
 
 </main>
 
   <footer class="p-3 bg-dark text-white text-center">
     <p id="fonte"></p>
 
-    <a class="text-light" href="index.html">Voltar ao Menu Inicial</a>
+    <a class="btn text-light" href="index.html">Retornar ao Menu Inicial</a>
+
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
