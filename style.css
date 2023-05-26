@@ -122,4 +122,73 @@ select {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar a.btn {
+  margin: 5px;
+  padding: 10px 20px;
+}
+.navbar a.btn {
+  text-decoration: none;  /* Remove o sublinhado */
+  color: #ffffff;  /* Cor do texto */
+  background-color: #04496c;  /* Cor do fundo do botão */
+  border-radius: 5px;  /* Bordas arredondadas */
+  transition: background-color 0.3s ease;  /* Transição suave da cor de fundo */
+}
+
+.navbar a.btn:hover {
+  background-color: #4CAF50;  /* Cor do fundo do botão quando o mouse passa por cima */
+}
+
+@media (max-width: 576px) {
+  .navbar a.btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+footer {
+  background-color: #023b57;  /* Azul-marinho */
+  color: #ffffff;  /* Cor do texto */
+  padding: 20px;  /* Espaço interno */
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.2);  /* Sombra para dar profundidade */
+}
+
+footer p {
+  margin-bottom: 10px;  /* Espaço abaixo do parágrafo */
+}
+
+footer a.btn {
+  text-decoration: none;  /* Remove o sublinhado */
+  color: #ffffff;  /* Cor do texto */
+  background-color: #04496c;  /* Cor do fundo do botão */
+  padding: 10px 20px;  /* Espaço interno */
+  border-radius: 5px;  /* Bordas arredondadas */
+  transition: background-color 0.3s ease;  /* Transição suave da cor de fundo */
+}
+
+footer a.btn:hover {
+  background-color: #4CAF50;  /* Cor do fundo do botão quando o mouse passa por cima */
+}
+
+
+.card-link {
+  text-decoration: none;  /* Remove o sublinhado */
+  color: #ffffff;  /* Cor do texto */
+  background-color: #04496c;  /* Cor do fundo do botão */
+  padding: 10px 20px;  /* Espaço interno */
+  border-radius: 5px;  /* Bordas arredondadas */
+  transition: background-color 0.3s ease;  /* Transição suave da cor de fundo */
+  display: inline-block;  /* Permite a estilização do tamanho e espaçamento */
+  margin-top: 10px;  /* Espaço acima do botão */
+}
+
+.card-link:hover {
+  background-color: #4CAF50;  /* Cor do fundo do botão quando o mouse passa por cima */
+}
 
