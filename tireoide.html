@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadiamento Clínico TNM - Tireoide</title>
+  <!-- CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <header class="p-3 bg-dark text-white">
+    <h1>Estadiamento TNM - Tireoide</h1>
+  </header>
+<br>
+  <div class="navbar navbar-dark bg-dark d-flex justify-content-center">
+    <div class="btn-group-vertical">
+      <a href="laringe.html" class="btn btn-outline-light my-2 rounded-pill">Laringe</a>
+      <a href="faringe.html" class="btn btn-outline-light my-2 rounded-pill">Faringe</a>
+      <a href="cavidadeoral.html" class="btn btn-outline-light my-2 rounded-pill">Cavidade Oral</a>
+      <a href="glandulassalivares.html" class="btn btn-outline-light my-2 rounded-pill">Glândulas Salivares</a>
+      <br>
+      <!-- Adicione mais botões conforme necessário -->
+    </div>
+  </div>
+  <br>
+
+  <main class="container my-4">
+
+    <form>
+      <div class="form-group">
+        
+        <br>
+        <label for="idade">Idade:</label>
+        <select id="idade" name="idade" class="form-control">
+            <option value="">Selecione a opção</option>
+            <option value="-55"> Menor que 55 anos</option>
+            <option value="+55"> Maior que 55 anos</option>
+            
+        </select>
+        <br>
+        <label for="tiPo">Tipo de Câncer:</label>
+        <select id="tiPo" name="tiPo" class="form-control">
+            <option value="">Selecione a opção</option>
+            <option value="papilifero">Papilífero</option>
+            <option value="folicular">Folicular</option>
+            <option value="medular">Medular</option>
+            <option value="anaplasico">Anaplásico</option>
+        </select>
+
+        <br>
+        <label for="sublocalizacao">Sublocalização:</label>
+        <select id="sublocalizacao" name="sublocalizacao" class="form-control">
+          <option value="">Selecione a opção</option>
+          <option value="lóbuloesquerdo">Lóbulo Esquerdo</option>
+          <option value="lóbuloesquerdoemediano">Lóbulo Esquerdo e Mediano</option>
+          <option value="lóbulodireito">Lóbulo Direito</option>
+          <option value="lóbulodireitomedeniano">Lóbulo Direito e Mediano</option>
+          <option value="lóbulomedeniano">Lóbulo Mediano</option>
+          <option value="multifocal">Multifocal</option>
+        </select>
+      </div>
+
+      <label for="t">T:</label>
+      <select id="t" name="t" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="tx">Tx - O tumor primário não pode ser avaliado.</option>
+        <option value="t0">T0 - Sem evidência de tumor primário</option>
+        <option value="t1">T1 - Tumor limitado à tireoide, sem extensão extratireoidiana</option>
+        <option value="t1a">T1a - Tumor incidental, identificado apenas por exame histológico após tireoidectomia subtotal</option>
+        <option value="t1b">T1b - Tumor clinicamente aparente</option>
+        <option value="t2">T2 - Tumor limitado à tireoide, maior que 1 cm, mas não mais que 2 cm em sua maior dimensão</option>
+        <option value="t3">T3 - Tumor limitado à tireoide, maior que 2 cm, mas não mais que 4 cm em sua maior dimensão</option>
+        <option value="t3a">T3a - Tumor limitado à tireoide, maior que 4 cm, mas não mais que 5 cm em sua maior dimensão</option>
+        <option value="t3b">T3b - Tumor limitado à tireoide, maior que 5 cm, mas não mais que 6 cm em sua maior dimensão</option>
+        <option value="t4">T4 - Tumor limitado à tireoide, maior que 6 cm em sua maior dimensão</option>
+        <option value="t4a">T4a - Tumor invade estruturas adjacentes (p. ex., traqueia, esôfago, nervo recorrente laríngeo)</option>
+        <option value="t4b">T4b - Tumor invade vasos grandes (p. ex., artéria carótida, veia jugular interna)</option>
+    </select>
+        <br>
+      <label for="n">N:</label>
+      <select id="n" name="n" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
+        <option value="n0">N0 - Sem metástase em linfonodo regional</option>
+        <option value="n1">N1 - Metástase em linfonodo(s) cervical(is) unilateral(is), contralateral(es) ipsilateral(is), ou ambos, menor(es) ou igual(ais) a 3 cm em sua maior dimensão</option>
+        <option value="n1a">N1a - Metástase em linfonodo(s) cervical(is) unilateral(is)</option>
+        <option value="n1b">N1b - Metástase em linfonodo(s) contralateral(es) ipsilateral(is)</option>
+        <option value="n1c">N1c - Metástase em linfonodo(s) cervical(is) unilateral(is) e contralateral(es) ipsilateral(is)</option>
+        <option value="n1mic">N1mic - Metástase(s) em linfonodo(s) cervical(is), identificado(s) apenas por exame histológico e/ou imunohistoquímico</option>
+        <option value="n2">N2 - Metástase em linfonodo(s) cervical(is) bilateral(is) ou contralateral(es) ipsilateral(is), maior(es) que 3 cm, mas não mais que 6 cm em sua maior dimensão</option>
+        <option value="n2a">N2a - Metástase em linfonodo(s) cervical(is) bilateral(is)</option>
+        <option value="n2b">N2b - Metástase em linfonodo(s) contralateral(es) ipsilateral(is)</option>
+        <option value="n2c">N2c - Metástase em linfonodo(s) cervical(is) bilateral(is) e contralateral(es) ipsilateral(is)</option>
+        <option value="n3">N3 - Metástase em linfonodo(s) cervical(is) bilateral(is) ou contralateral(es) ipsilateral(is), maior(es) que 6 cm em sua maior dimensão</option>
+        <option value="n3a">N3a - Metástase em linfonodo(s) cervical(is) bilateral(is)</option>
+        <option value="n3b">N3b - Metástase em linfonodo(s) contralateral(es) ipsilateral(is)</option>
+      </select>
+
+      <br>
+      <label for="m">M:</label>
+      <select id="m" name="m" class="form-control">
+        <option value="">Selecione a opção</option>
+        <option value="mx">MX - Metástases à distância não podem ser avaliadas</option>
+        <option value="m0">M0 - Sem metástases à distância</option>
+        <option value="m1">M1 - Metástases à distância presentes</option>
+      </select>
+      
+    <button type="button" id="calcular-estagio-tireoide" class="btn btn-primary btn-lg">Calcular estágio</button>
+     
+  </form>
+    <br>
+
+    <div id="resultado-estagio" class="mt-4"></div>
+    
+    <br>
+    <div id="resumo-opcoes" class="mt-4"></div>
+    <br>
+    <div id="comentario-prognostico" class="mt-4"></div>
+    <br>
+    <div id="taxa-sobrevida" class="mt-4"></div>
+    <br>
+    <div id="tumores-comuns" class="mt-4"></div>
+    <br>
+    <div id="fonte"></div>
+
+</main>
+
+<footer>
+
+    <a class="btn text-light" href="index.html">Retornar ao Menu Inicial</a>
+    <a class="btn text-light" href="tireoide.html">Retornar ao Topo</a>
+    <a class = "btn text-light" button id="copy-btn"> Copiar resultado </button></a>
+
+  </footer>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  <script src="tireoide.js" defer></script>
+</body>
+
+</html>
+  
