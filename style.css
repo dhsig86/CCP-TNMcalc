@@ -1,8 +1,48 @@
+.menuprincipal {
+  background-color: #023b57; /* Azul-marinho */
+  color: #ffffff;  
+  image-orientation: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+.centralizado {
+  text-align: center;
+}
+
+
 body {
   background-color: #f8f9fa;
   font-family: 'Roboto', sans-serif; /* Roboto é a fonte padrão usada no Material Design */
   color: #212529;
+  border: 10px solid #023b57; /* Cor e espessura da borda */
+  border-radius: 10px; /* Raio do canto da borda */
+  padding: 20px; /* Espaçamento interno dentro da borda */
 }
+
+.btn-outline-secondary {
+  background-color: #023b57; /* Azul-marinho */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px; /* Bordas arredondadas */
+  width: 100%; /* Faz o botão preencher toda a largura disponível */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+  text-decoration: none; /* Remover decoração de hyperlink no hover, focus e active */
+  outline: none; /* Remover outline no focus */
+}
+
 
 .header, .footer {
   text-align: center;  
@@ -28,21 +68,30 @@ body {
 }
 
 
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+
+nav ul li {
+  width: calc(33.33% - 20px);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f6f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
 nav li img {
   width: 60px;
   height: 62px;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
-}
-
-nav ul li {
-  
-  margin-bottom: 30px;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  background-color: #f0f6f9; /* Azul-marinho */
 }
 
 #splash-screen {
@@ -192,3 +241,65 @@ footer a.btn:hover {
   background-color: #4CAF50;  /* Cor do fundo do botão quando o mouse passa por cima */
 }
 
+nav .row .col-md-4 img {
+    width: 100px;
+    height: 100px;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px; /* Ajuste este valor para o máximo que você deseja */
+}
+
+.card {
+  margin: 15px;
+  width: calc((100% / 2) - 20px); /* Isso vai dividir a linha em 2 cartões */
+  text-align: center;
+}
+
+.card-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-img-top {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-body {
+  margin-top: 10px;
+}
+
+
+
+@media (max-width: 800px) { /* Ajuste o valor de 800px para quando você deseja que eles empilhem verticalmente */
+  .card {
+    width: 60%;
+       
+
+
+  }
+}
+
+.btn-primary {
+  background-color: #05172a;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
