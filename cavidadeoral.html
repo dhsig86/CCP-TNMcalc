@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estadiamento Clínica TNM - Cavidade Oral</title>
+  <title>Estadiamento Clínica TNM - Cavidade Oral </title>
   <!-- CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,13 +12,18 @@
 
 <body>
   <header class="p-3 bg-dark text-white">
-    <h1>Estadiamento TNM - Cavidade Oral</h1>
+    <br></br>
+    <h1 class="centralizado">Estadiamento TNM - Cavidade Oral</h1>
+    <br></br>
+    
   </header>
 
   <div class="navbar navbar-dark bg-dark d-flex justify-content-center">
     <div class="btn-group-vertical">
         <a href="laringe.html" class="btn btn-outline-light my-2 rounded-pill">Laringe</a>
         <a href="faringe.html" class="btn btn-outline-light my-2 rounded-pill">Faringe</a>
+        <a href="glandulassalivares.html" class="btn btn-outline-light me-2 rounded-pill">Glândulas Salivares</a>
+        <a href="tireoide.html" class="btn btn-outline-light my-2 rounded-pill">Tireóide</a>
         <!-- Adicione mais botões conforme necessário -->
     </div>
 </div>
@@ -37,6 +42,7 @@
           <option value="palato_Duro">Palato Duro</option>
           <option value="palato_Mole">Palato Mole</option>
           <option value="assoalho_Boca">Assoalho de Boca</option>
+          <option value="lingua">Lingua(2/3 Anteriores)</option>
         </select>
       </div>
 
@@ -90,20 +96,22 @@
     <div id="comentario-prognostico" class="mt-4"></div> <!-- div para comentario prognostico-->
     
     <br> </br>
-    <div id="taxa-sobrevida" class="mt-4">    </div> <!-- Nova div para taxa de sobrevida -->
+    <div id="taxa-sobrevida" class="mt-4">    </div> <!-- Div para taxa de sobrevida -->
     <br> </br>
-    <div id="tumores-comuns" class="mt-4"></div>
+    <div id="tumores-comuns" class="mt-4"></div> <!--Div para referencia  tumores comuns-->
     <br> </br> 
-    <div id="div-citacao-fonte"> 
+    <div id="fonte"> <!--Div para citar a fonte -->
     </div>
 
 </main>
 
-  <footer class="p-3 bg-dark text-white text-center">
-    <p id="fonte"></p>
+<footer>
 
     <a class="btn text-light" href="index.html">Retornar ao Menu Inicial</a>
-
+    <a class="btn text-light" href="cavidadeoral.html">Retornar ao Topo</a>
+    <a class = "btn text-light" button id="copy-btn"> Copiar resultado </button></a>
+  
+  
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
