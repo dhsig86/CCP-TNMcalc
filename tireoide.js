@@ -12,9 +12,10 @@ const sobrevidaPorEstagio = {
         "Estágio IV": { taxa: "51%", comentario: "O prognóstico é menos favorável no Estágio IV. O tratamento pode envolver uma combinação de cirurgia, terapia com iodo radioativo, terapia hormonal e, em alguns casos, quimioterapia." }
     },
     "medular": {
-        "Estágio IVA": { taxa: "56%", comentario: "O prognóstico é menos favorável na fase IVA. O tratamento geralmente inclui cirurgia, terapias direcionadas e, às vezes, radioterapia." },
-        "Estágio IVB": { taxa: "39%", comentario: "Nesta fase, o câncer pode ter se espalhado para os tecidos próximos ou para os linfonodos distantes. O tratamento é complexo e pode incluir cirurgia, terapias direcionadas, radioterapia e, ocasionalmente, quimioterapia." },
-        "Estágio IVC": { taxa: "8%", comentario: "O prognóstico é difícil nesta fase. O câncer provavelmente se espalhou para outros órgãos. O tratamento pode envolver terapias direcionadas, radioterapia e quimioterapia." }
+        "Estágio I": { taxa: "97%", comentario: "O prognóstico é excelente no Estágio I do tumor medular de tireoide. A maioria dos pacientes tem uma taxa de sobrevida de aproximadamente 97%. O tratamento primário geralmente envolve cirurgia para remover o tumor da tireoide." },
+        "Estágio II": { taxa: "88%", comentario: "No Estágio II do tumor medular de tireoide, a taxa de sobrevida é em torno de 88%. O tratamento envolve cirurgia para remover o tumor e, às vezes, terapia direcionada adicional, dependendo do caso individual." },
+        "Estágio III": { taxa: "71%", comentario: "O prognóstico no Estágio III do tumor medular de tireoide é moderado, com uma taxa de sobrevida de aproximadamente 71%. O tratamento geralmente inclui cirurgia para remover o tumor, terapia direcionada e, em alguns casos, radioterapia." },
+        "Estágio IV": { taxa: "34%", comentario: "No Estágio IV do tumor medular de tireoide, a taxa de sobrevida é inferior, cerca de 34%. Nesse estágio avançado, o câncer se espalhou para órgãos distantes. O tratamento pode envolver cirurgia, terapia direcionada, radioterapia e, às vezes, quimioterapia." }     
     },
     "anaplasico": {
         "Estágio IV": { taxa: "14%", comentario: "O prognóstico para o câncer anaplásico da tireoide é geralmente pobre, pois este tipo de câncer é agressivo e resistente ao tratamento. O tratamento pode incluir uma combinação de cirurgia, radioterapia e quimioterapia." }
@@ -123,15 +124,17 @@ function exibirSobrevida(tiPo, estagio) {
     if (estagio === "Estágio IVA" || estagio === "Estágio IVB" || estagio === "Estágio IVC") {
         estagio = "Estágio IV";
     }
+    if (sobrevidaPorEstagio.hasOwnProperty(tiPo) && sobrevidaPorEstagio[tiPo].hasOwnProperty(estagio)) {
+        var taxa = sobrevidaPorEstagio[tiPo][estagio].taxa;
+        var comentario = sobrevidaPorEstagio[tiPo][estagio].comentario;
+        var taxabold = taxa.bold();
     
-    var taxa = sobrevidaPorEstagio[tiPo][estagio].taxa;
-    var comentario = sobrevidaPorEstagio[tiPo][estagio].comentario;
-    var taxabold = taxa.bold();
-    
-    // Exibe a taxa de sobrevida e o comentário no elemento com o id "comentario-prognostico"
-    document.getElementById("comentario-prognostico").innerHTML = "Taxa de sobrevida em 5 anos: " + taxabold + ". " + comentario;
+        // Exibe a taxa de sobrevida e o comentário no elemento com o id "comentario-prognostico"
+        document.getElementById("comentario-prognostico").innerHTML = "Taxa de sobrevida em 5 anos: " + taxabold + ". " + comentario;
+    } else {
+        document.getElementById("comentario-prognostico").innerHTML = "Informações sobre a sobrevida não disponíveis para o estágio e tipo de câncer selecionados.";
+    }
 }
-
 
 
 document.getElementById("calcular-estagio-tireoide").addEventListener("click", function() {
