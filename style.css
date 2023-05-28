@@ -285,9 +285,7 @@ nav .row .col-md-4 img {
 @media (max-width: 800px) { /* Ajuste o valor de 800px para quando você deseja que eles empilhem verticalmente */
   .card {
     width: 60%;
-       
-
-
+   
   }
 }
 
