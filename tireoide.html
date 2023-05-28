@@ -12,7 +12,10 @@
 
 <body>
   <header class="p-3 bg-dark text-white">
-    <h1>Estadiamento TNM - Tireoide</h1>
+    <br></br>
+    <h1 class="centralizado">Estadiamento TNM - Tireóide</h1>
+    <br></br>
+    
   </header>
 <br>
   <div class="navbar navbar-dark bg-dark d-flex justify-content-center">
@@ -36,8 +39,8 @@
         <label for="idade">Idade:</label>
         <select id="idade" name="idade" class="form-control">
             <option value="">Selecione a opção</option>
-            <option value="-55"> Menor que 55 anos</option>
-            <option value="+55"> Maior que 55 anos</option>
+            <option value="menorque55"> Menor que 55 anos</option>
+            <option value="maiorque55"> Maior que 55 anos</option>
             
         </select>
         <br>
@@ -83,21 +86,12 @@
       <label for="n">N:</label>
       <select id="n" name="n" class="form-control">
         <option value="">Selecione a opção</option>
-        <option value="nx">NX - Linfonodos regionais não podem ser avaliados</option>
-        <option value="n0">N0 - Sem metástase em linfonodo regional</option>
-        <option value="n1">N1 - Metástase em linfonodo(s) cervical(is) unilateral(is), contralateral(es) ipsilateral(is), ou ambos, menor(es) ou igual(ais) a 3 cm em sua maior dimensão</option>
-        <option value="n1a">N1a - Metástase em linfonodo(s) cervical(is) unilateral(is)</option>
-        <option value="n1b">N1b - Metástase em linfonodo(s) contralateral(es) ipsilateral(is)</option>
-        <option value="n1c">N1c - Metástase em linfonodo(s) cervical(is) unilateral(is) e contralateral(es) ipsilateral(is)</option>
-        <option value="n1mic">N1mic - Metástase(s) em linfonodo(s) cervical(is), identificado(s) apenas por exame histológico e/ou imunohistoquímico</option>
-        <option value="n2">N2 - Metástase em linfonodo(s) cervical(is) bilateral(is) ou contralateral(es) ipsilateral(is), maior(es) que 3 cm, mas não mais que 6 cm em sua maior dimensão</option>
-        <option value="n2a">N2a - Metástase em linfonodo(s) cervical(is) bilateral(is)</option>
-        <option value="n2b">N2b - Metástase em linfonodo(s) contralateral(es) ipsilateral(is)</option>
-        <option value="n2c">N2c - Metástase em linfonodo(s) cervical(is) bilateral(is) e contralateral(es) ipsilateral(is)</option>
-        <option value="n3">N3 - Metástase em linfonodo(s) cervical(is) bilateral(is) ou contralateral(es) ipsilateral(is), maior(es) que 6 cm em sua maior dimensão</option>
-        <option value="n3a">N3a - Metástase em linfonodo(s) cervical(is) bilateral(is)</option>
-        <option value="n3b">N3b - Metástase em linfonodo(s) contralateral(es) ipsilateral(is)</option>
-      </select>
+        <option value="nx">Nx - Linfonodos regionais não há variáveis</option>
+        <option value="n0">N0 - Ausência de linfonodos regionais metastáticos</option>
+        <option value="n1">N1 - Linfonodo regional metastático</option>
+        <option value="n1a">N1a - Linfonodos do nível 6 ou 7 (pré-traqueal, para-traqueais e pré-laríngeos ou mediastinal superior). Pode ser uni ou bilateral</option>
+        <option value="n1b">N1b - Linfonodos cervicais unilateral, bilateral ou (níveis I - V ou retrofaríngeos)</option>
+    </select>
 
       <br>
       <label for="m">M:</label>
