@@ -12,25 +12,9 @@ const prognosticoPorEstagio = {
 document.addEventListener('DOMContentLoaded', function () {
   
   const calcularEstagioButton = document.getElementById('calcular-estagio-laringe');
-
-  calcularEstagioButton.addEventListener('click', function () {
-    const tValue = document.getElementById('t').value;
-    const nValue = document.getElementById('n').value;
-    const mValue = document.getElementById('m').value;
-
-    
-    const estagioTumor = calcularEstagioLaringe(tValue, nValue, mValue);
-    exibirEstagioTumor(estagioTumor);
-
-    const comentarioPrognostico = obterComentarioPrognostico(estagioTumor);
-    exibirComentarioPrognostico(comentarioPrognostico);
-    // Aqui é onde você chama a função gerarResumoOpcoes
-    gerarResumoOpcoes();
-  });
-
-  document.getElementById('sublocalizacao').addEventListener('change', function () {
-    atualizarOpcoesT(this.value);
-  });
+  const sublocalizacaoSelect = document.getElementById('sublocalizacao');
+  const areas = document.querySelectorAll('area[data-sublocalizacao]');
+  
   function atualizarOpcoesT(sublocalizacao) {
     const tSelect = document.getElementById('t');
     tSelect.innerHTML = '';
@@ -52,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
         opt.text = opcao.text;
         tSelect.add(opt);
       });
+      
+
     } else if (sublocalizacao === 'supraglote') {
       const opcoesT = [
         { value: 'tx', text: 'Tx - O tumor primário não pode ser avaliado.' },
@@ -68,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
         opt.text = opcao.text;
         tSelect.add(opt);
       });
+      
+           
     } else if (sublocalizacao === 'subglote') {
       const opcoesT = [
         { value: 'tx', text: 'Tx - O tumor primário não pode ser avaliado.' },
@@ -83,9 +71,41 @@ document.addEventListener('DOMContentLoaded', function () {
         opt.value = opcao.value;
         opt.text = opcao.text;
         tSelect.add(opt);
-      });
+      });    
     }
   }
+  
+  areas.forEach(function(area) {
+    area.addEventListener('click', function(event) {
+      event.preventDefault(); // Impede a atualização da página
+
+      const sublocalizacao = area.dataset.sublocalizacao;
+      sublocalizacaoSelect.value = sublocalizacao;
+      sublocalizacaoSelect.dispatchEvent(new Event('change'));
+    });
+  });
+
+  sublocalizacaoSelect.addEventListener('change', function() {
+    const sublocalizacao = sublocalizacaoSelect.value;
+    atualizarOpcoesT(sublocalizacao);
+  });
+
+  calcularEstagioButton.addEventListener('click', function () {
+    const tValue = document.getElementById('t').value;
+    const nValue = document.getElementById('n').value;
+    const mValue = document.getElementById('m').value;
+
+    
+    const estagioTumor = calcularEstagioLaringe(tValue, nValue, mValue);
+    exibirEstagioTumor(estagioTumor);
+
+    const comentarioPrognostico = obterComentarioPrognostico(estagioTumor);
+    exibirComentarioPrognostico(comentarioPrognostico);
+    // Aqui é onde você chama a função gerarResumoOpcoes
+    gerarResumoOpcoes();
+  });
+  
+  // Função para calcular o estagio do tumor 
   
   function calcularEstagioLaringe(t, n, m) {
     let estagio = "";
@@ -170,6 +190,35 @@ function exibirComentarioPrognostico(comentarioPrognostico) {
     document.getElementById('comentario-prognostico').textContent = comentarioPrognostico;
 }
 
+function copiarResultado() {
+  // Captura o conteúdo de todas as divs
+  var estagioTumor = document.getElementById("estagio-tumor").textContent;
+  var resumoOpcoes = document.getElementById("resumo-opcoes").textContent;
+  var comentarioPrognostico = document.getElementById("comentario-prognostico").textContent;
+  var tumoresComuns = document.getElementById("tumores-comuns").textContent;
+  var fonte = document.getElementById("fonte").textContent;
+
+  // Junta todo o conteúdo em um único string, com quebras de linha entre cada parte
+  var resumo = estagioTumor + "\n\n" + resumoOpcoes + "\n\n" + comentarioPrognostico + "\n\n" + tumoresComuns + "\n\n" + fonte;
+
+  // Usando a nova API da área de transferência para copiar o resumo
+  navigator.clipboard.writeText(resumo).then(function() {
+      /* sucesso - opcional */
+      alert("Resumo do estadiamento copiado com sucesso!");
+  }, function() {
+      /* falha - opcional */
+      alert("Erro ao copiar o resumo. Tente novamente.");
+  });
+}
+
+// Adiciona o evento de clique ao botão
+document.getElementById("copy-btn").addEventListener("click", copiarResultado);  
+
+
+
+function exibirFonte() {
+  document.getElementById('fonte').textContent = "Fonte: Surveillance, Epidemiology, and End Results (SEER) Program (www.seer.cancer.gov) \n Fonte2: TNM Maligant Tumors Classifications - 8th edition - UICC";
+}
 document.getElementById("calcular-estagio-laringe").addEventListener("click", function() {
   const tumoresComuns = [
     { nome: "1 - Carcinoma de células escamosas", percentual:"Aproximadamente 90%" },
